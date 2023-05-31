@@ -4,6 +4,7 @@ import { projects } from "../constants/project";
 import Project from "./Project";
 import Stack from "./Stack";
 import cuadrado from "../media/cuadrado.svg";
+import { Link } from "react-scroll";
 
 
 const Experience = () => {
@@ -73,7 +74,7 @@ const Experience = () => {
       </Typography>
 
       <CustomButton variant="outlined" sx={{ mx: 'auto', mt: 3, mb: 8}}>
-        Ponte en Contacto
+        <Link to='pages' className='link' smooth>Ponte en Contacto </Link> 
       </CustomButton>
   </Box>
   </Container>

@@ -4,24 +4,9 @@ import reactImg from "../media/react_svg.svg";
 import Navbar from "./Navbar";
 
 
+
 const Hero = () => {
-  const CustomButton = styled(Button)(({ theme }) =>({
-    border: '3px solid white',
-    backgroundColor: '#00C7FF',
-    color: 'white',
-    width: '20%',
-    borderRadius: '25px',
-    '&:hover':{
-      border: '3px solid white',
-      backgroundColor: 'transparent',
-    },
-    [theme.breakpoints.down('md')]:{
-      width: '35%',
-    },
-    [theme.breakpoints.down('sm')]:{
-      width: '50%',
-    },
-  }))
+
   const CustomTitle = styled(Typography)(({ theme }) =>({
     color: 'white',
     textAlign:'center',
@@ -32,6 +17,7 @@ const Hero = () => {
       fontSize: '2.5rem',
     },
   }))
+
   return (
       <Container
       maxWidth = 'false'
@@ -69,9 +55,8 @@ const Hero = () => {
           gap:'1rem',
           mt: 16,
         }}>
-          <CustomButton>Download CV</CustomButton>
+          <Button sx={{border: '2px solid'}} href="/RomeroBrunoCv.pdf" download>Download CV</Button>
         </Box>
-
     </Box>
 </Container>
 

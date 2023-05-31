@@ -33,6 +33,7 @@ const Project = ({title, description, tags, img}) => {
       </CardActionArea>
 
       <CardActions sx={{display: 'flex', flexDirection:'column'}}>
+        
         <Box sx={{width:'100%', display: 'flex', justifyContent:'space-around', mx:'auto', mb: 3}}>
           <Button size="small" style={{backgroundColor: 'rgba(0,199,255,255)'}} variant ='contained'>
             code
@@ -49,8 +50,8 @@ const Project = ({title, description, tags, img}) => {
               <Chip label={tag} key={tag} variant="outlined" />
             ))
           }
-
         </Box>
+
       </CardActions>
     </Card>
   );
