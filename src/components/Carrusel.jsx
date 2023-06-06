@@ -2,24 +2,36 @@ import React, { useEffect, useState } from 'react';
 import { Box, Button, Grid, IconButton, Typography } from '@mui/material';
 import { KeyboardArrowLeft, KeyboardArrowRight } from '@mui/icons-material';
 import PhoneCase from '../media/PhoneCase.jpg';
+import promo from '../media/Promo 1 historia.jpg';
+import DF from '../media/DF cadete.jpg';
+import df from '../media/DF san valentin.jpg';
+import preguntas from '../media/flyer preguntas frecuentes.jpg';
+import MyM from '../media/folleto MyM 2.jpg';
+import mym from '../media/postres mym.jpg';
+import sandwich from '../media/sandwich mym.jpg';
+import primate from '../media/Logo primate (fondo Blanco).jpg';
+import bl from '../media/logo BL accesorios.jpg';
+import root from '../media/LOGO (marron).jpg';
+import Root from '../media/flyer publicitario.jpg';
 import { useMediaQuery } from '@mui/material';
 
 
 
 
+
 const images = [
-  'https://i.pinimg.com/564x/19/77/de/1977de988785f3068f8b489f5a2d593d.jpg',
-  'https://i.pinimg.com/564x/c0/eb/49/c0eb49bf1efa614de271125f9a75e0a8.jpg',
-  'https://i.pinimg.com/564x/e0/a1/13/e0a113ca7e4f1c98b7da531934c8d697.jpg',
-  'https://i.pinimg.com/236x/ed/69/02/ed690200f40bf1cb7795c49a42f20b10.jpg',
-  'https://i.pinimg.com/236x/c4/a3/e9/c4a3e9140074c937a5e78b9d2646bdae.jpg',
-  'https://i.pinimg.com/236x/01/50/1d/01501da1c698345988c7082e69a4a24a.jpg',
-  'https://i.pinimg.com/236x/ec/b1/43/ecb1439074688451d8b2e609c891ae42.jpg',
-  'https://i.pinimg.com/236x/d8/b2/cb/d8b2cb7cfef592873fb55c07b4742fd1.jpg',
-  'https://i.pinimg.com/236x/32/72/9c/32729c6892ce548aee615ef231057782.jpg',
-  'https://i.pinimg.com/236x/7b/c1/5a/7bc15a27bebf3e2763890cedfc2b3437.jpg',
   PhoneCase,
-  // Agrega más imágenes aquí 
+  promo,
+  DF,
+  preguntas,
+  df,
+  bl,
+  primate,
+  root,
+  Root,
+  mym,
+  sandwich,
+  MyM,
 ];
 
 const Carousel = () => {

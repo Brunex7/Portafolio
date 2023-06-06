@@ -144,7 +144,7 @@
 
 // export default Form;
 
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
@@ -177,9 +177,39 @@ const useStyles = makeStyles((theme) => ({
 function Form() {
   const classes = useStyles();
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Lógica para enviar el formulario
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Realizar la solicitud POST utilizando fetch
+    fetch("https://formsubmit.co/brunoromero200@gmail.com", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+      .then(response => response.json())
+      .then(data => {
+        // Manejar la respuesta del servidor o API
+        console.log(data);
+      })
+      .catch(error => {
+        // Manejar errores de la solicitud
+        console.error(error);
+      });
   };
 
   return (
@@ -189,7 +219,8 @@ function Form() {
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <TextField
-                label="Nombre"
+                label="name"
+                onChange={handleChange}
                 className={classes.input}
                 InputProps={{
                   className: classes.input,
@@ -199,7 +230,8 @@ function Form() {
             </Grid>
             <Grid item xs={12}>
               <TextField
-                label="Correo electrónico"
+                label="email"
+                onChange={handleChange}
                 className={classes.input}
                 InputProps={{
                   className: classes.input,
@@ -209,7 +241,8 @@ function Form() {
             </Grid>
             <Grid item xs={12}>
               <TextField
-                label="Mensaje"
+                label="message"
+                onChange={handleChange}
                 multiline
                 minRows={4}
                 className={classes.input}

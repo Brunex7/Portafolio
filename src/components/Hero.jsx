@@ -49,13 +49,13 @@ const Hero = () => {
       <Box
         sx={{
           display:'flex',
-          flexDirection:'column',
           alignItems:'center',
           justifyContent:'center',
           gap:'1rem',
           mt: 16,
         }}>
           <Button sx={{border: '2px solid'}} href="/RomeroBrunoCv.pdf" download>Download CV</Button>
+          <Button sx={{border: '2px solid'}} href="/Portafolio.pdf" download>Download Portfolio</Button>
         </Box>
     </Box>
 </Container>
