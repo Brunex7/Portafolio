@@ -18,16 +18,12 @@ const Project = ({title, description, tags, img}) => {
       <CardActionArea>
         <CardMedia component='img' image={img}/>
           <CardContent>
-            <Typography variant="h5" component="div">
+            <Typography variant="h4" component="div">
               {title}
             </Typography>
 
             <Typography variant="h5" component="div">
               {description}
-            </Typography>
-
-            <Typography variant="h5" component="div">
-              {title}
             </Typography>
           </CardContent>
       </CardActionArea>

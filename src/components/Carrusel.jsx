@@ -38,6 +38,9 @@ const Carousel = () => {
 
     const [currentImage, setCurrentImage] = useState(2);
     const [autoplay, setAutoplay] = useState(true);
+    const [showBut, setShowBut] = useState(true);
+    const isMobile = useMediaQuery('(max-width:900px)');
+    const intervalTime = 3000;
 
     useEffect(() => {
       let timerId;
@@ -52,6 +55,17 @@ const Carousel = () => {
         clearTimeout(timerId);
       };
     }, [currentImage, autoplay]);
+
+    useEffect(() => {
+      const handleResize = () => {
+        setShowBut(!isMobile);
+      }
+      window.addEventListener('resize', handleResize);
+
+      return () =>{
+        window.removeEventListener('resize', handleResize);
+      }
+    },[isMobile]);
     
   
     const handleNext = () => {
@@ -70,11 +84,6 @@ const Carousel = () => {
       }, 100);
     };
     
-
-    const isMobile = useMediaQuery('(max-width:900px)');
-    const intervalTime = 3000;
-
-    
     const visibleImages = isMobile ? [images[currentImage]] : [
       images[(currentImage - 2 + images.length) % images.length],
       images[(currentImage - 1 + images.length) % images.length],
@@ -92,12 +101,14 @@ const Carousel = () => {
           Mis trabajos como Diseñador Grafico
         </Typography>
       <Grid container alignItems="center" justifyContent="center" spacing={1} sx={{mt: 16, mb: 12,}} >
-        <Grid item xs={1} sx={{width: '200px'}}>
-          <Button sx={{height: '200px'}} onClick={handlePrev}>
+      {showBut && (
+        <Grid item xs={1} sx={{ width: '200px' }}>
+          <Button sx={{ height: '200px' }} onClick={handlePrev}>
             <KeyboardArrowLeft />
           </Button>
         </Grid>
-        {visibleImages.map((image, index) => (
+      )}
+      {visibleImages.map((image, index) => (
         <Grid item key={index}>
           <img
           src={image}
@@ -106,14 +117,19 @@ const Carousel = () => {
             width: isMobile ? '300px' : '200px',
             filter: isMobile ? 'none' : index === 2 ? 'none' : 'blur(8px)',
             transition: 'opacity 0.5s ease-in-out',
-          }}/>
+          }}
+          onTouchStart={() => setAutoplay(false)}
+          onTouchEnd={handleNext}
+          />
         </Grid>
-        ))}
+      ))}
+      {showBut && (
         <Grid item xs={1}>
-          <Button sx={{height: '200px'}} onClick={handleNext}>
+          <Button sx={{ height: '200px' }} onClick={handleNext}>
             <KeyboardArrowRight />
           </Button>
         </Grid>
+      )}
       </Grid>
       </Box>
     );

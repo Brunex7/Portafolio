@@ -4,11 +4,11 @@ import restcountriesImg from "../media/restcountries.png";
 
 export const projects = [
   {
-    title: "LinkedIn Clone",
+    title: "Rick and Morty App",
     description:
-      "This web application recreates the design of the social media platform Linkedin.",
+      "Proyecto desarrollado en el Bootcamp de soyHenry en el area del Front-End",
     image: linkedincloneImg,
-    tags: ["Firebase", "JavaScript", "React", "Redux"],
+    tags: ["Versel", "JavaScript", "React", "CSS"],
     source: "",
     liveVersion: "",
     id: 0,
