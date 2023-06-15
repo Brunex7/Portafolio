@@ -18,7 +18,7 @@ const App = () => {
     {
       image: PI,
       title: 'Henry PI| Videojuegos',
-      description: 'Proyecto cpmleto de Front-End y Back-End creando la base de datos y todas sus rutas.',
+      description: 'Proyecto completo de Front-End y Back-End creando la base de datos y todas sus rutas.',
       tags: ['React', 'Redux', 'JavaScript', 'CSS', 'UX/UI', 'SQL', 'Node.js', 'Express', 'API'],
       deployLink: 'https://example.com/project2-deploy',
       codeLink: 'https://github.com/Brunex7/PI-Videogames-main'
