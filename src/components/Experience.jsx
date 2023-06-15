@@ -56,7 +56,7 @@ const Experience = () => {
         }}
       ></div>
 
-      <Typography variant="h4" sx={{color: 'white', mt: 12, textAlign: 'center'}}>
+      <Typography variant="h4" sx={{color: 'white', textAlign: 'center'}}>
         ¿te interesa trabajar juntos?
       </Typography>
   </Box>
