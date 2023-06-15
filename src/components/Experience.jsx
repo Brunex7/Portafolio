@@ -1,10 +1,8 @@
 import { Box, Button, Container, Typography, styled } from "@mui/material";
 import React from "react";
-import { projects } from "../constants/project";
-import Project from "./Project";
+import App, { projects } from "../constants/project";
 import Stack from "./Stack";
 import cuadrado from "../media/cuadrado.svg";
-import { Link } from "react-scroll";
 
 
 const Experience = () => {
@@ -43,21 +41,10 @@ const Experience = () => {
     >
   <Box sx={{ maxWidth: '1300px', mx:'auto', my: 12}} id= 'experience'>
     <Typography variant='h4' sx={{ color: 'white', textAlign: 'center', mb: 2}}>
-      Let's take a look at what I've{' '}
-      <span style={{color:'rgba(0,199,255,255)'}}>built</span> so far
+      Aqui puedes ver mis {' '}
+      <span style={{color:'rgba(0,199,255,255)'}}>proyectos</span>.
     </Typography>
-
-    <Box sx={{display: 'flex', justifyContent: 'center', flexWrap: 'wrap'}}>
-      {projects.map((project) => (
-        <Project
-          key={project.id}
-          title={project.title}
-          description={project.description}
-          tags={project.tags}
-          img={project.image}
-        />
-      ))}
-    </Box>
+    <App />
     <Stack />
     <div
         style={{
@@ -72,10 +59,6 @@ const Experience = () => {
       <Typography variant="h4" sx={{color: 'white', mt: 12, textAlign: 'center'}}>
         ¿te interesa trabajar juntos?
       </Typography>
-
-      <CustomButton variant="outlined" sx={{ mx: 'auto', mt: 3, mb: 8}}>
-        <Link to='pages' className='link' smooth>Ponte en Contacto </Link> 
-      </CustomButton>
   </Box>
   </Container>
   )

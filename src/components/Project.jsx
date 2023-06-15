@@ -1,53 +1,45 @@
-import {
-  Button,
-  Card,
-  CardActionArea,
-  CardActions,
-  CardContent,
-  CardMedia,
-  Typography,
-} from "@mui/material";
-import Chip from "@mui/material/Chip";
-import { Box } from "@mui/system";
-import React from "react";
+import React from 'react';
+import Card from '@mui/material/Card';
+import CardActionArea from '@mui/material/CardActionArea';
+import CardContent from '@mui/material/CardContent';
+import CardActions from '@mui/material/CardActions';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+
+const cardStyle = {
+  backgroundColor: 'rgb(26,26, 26)',
+  border: '5px solid rgb(26, 26, 26)'
+};
 
 
-const Project = ({title, description, tags, img}) => {
+const Project = ({ image, title, description, tags, deployLink, codeLink }) => {
   return (
-    <Card sx={{ maxWidth: 375, margin: '1rem'}}>
-      <CardActionArea>
-        <CardMedia component='img' image={img}/>
-          <CardContent>
-            <Typography variant="h4" component="div">
-              {title}
-            </Typography>
-
-            <Typography variant="h5" component="div">
-              {description}
-            </Typography>
-          </CardContent>
-      </CardActionArea>
-
-      <CardActions sx={{display: 'flex', flexDirection:'column'}}>
-        
-        <Box sx={{width:'100%', display: 'flex', justifyContent:'space-around', mx:'auto', mb: 3}}>
-          <Button size="small" style={{backgroundColor: 'rgba(0,199,255,255)'}} variant ='contained'>
-            code
-          </Button>
-
-          <Button size="small" style={{backgroundColor: 'rgba(0,199,255,255)'}} variant ='contained'>
-            deploy
-          </Button>
-        </Box>
-
-        <Box sx={{width: '100%', display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '1rem', mb: 2}}>
-          {
-            tags.map((tag) => (
-              <Chip label={tag} key={tag} variant="outlined" />
-            ))
-          }
-        </Box>
-
+    <Card style={cardStyle}>
+        <CardMedia
+          component="img"
+          height="180"
+          image={image}
+          alt="Project Image"
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div" color="white">
+            {title}
+          </Typography>
+          <Typography variant="body2" color="white">
+            {description}
+          </Typography>
+          <Typography variant="body2" color="rgba(0,199,255,255)">
+            {tags.join(', ')}
+          </Typography>
+        </CardContent>
+      <CardActions>
+        <Button href={deployLink} target="_blank" rel="noopener noreferrer">
+          Deploy
+        </Button>
+        <Button href={codeLink} target="_blank" rel="noopener noreferrer">
+          Code
+        </Button>
       </CardActions>
     </Card>
   );

@@ -30,11 +30,11 @@ const Stack = () => {
     <CustomBox sx={{my:5, padding: 2}}>
       <Box sx={{flex: 1}}>
         <Typography variant="h4" sx={{ color: 'white', textAlign: 'center', mb: 3}}>
-          Versatily is key
+          Alguna de
         </Typography>
         
         <Typography variant="h4" sx={{ color: 'white', textAlign: 'center'}}>
-          Here's what I can help you with.
+          mis herramientas utilizadas.
         </Typography>
       </Box>
 
