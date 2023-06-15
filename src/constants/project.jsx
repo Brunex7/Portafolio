@@ -12,7 +12,7 @@ const App = () => {
       title: 'Rick and Morty App',
       description: 'Este proyecto se realizo para aplicar los conocimientos del Front-End',
       tags: ['JavaScript', 'React', 'CSS', 'UX/UI', 'API'],
-      deployLink: 'https://rick-and-morty-eight-rosy.vercel.app/',
+      deployLink: 'https://rick-and-morty-app-sooty.vercel.app/',
       codeLink: 'https://github.com/Brunex7/rick_and_morty',
     },
     {
